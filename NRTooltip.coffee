@@ -3,7 +3,9 @@ $ = jQuery
 $.fn.extend
   NRTooltip: (options) ->
     settings =
-      delay: false
+      correction:
+        top: 0
+        left: 0
       elements: false
       
     settings = $.extend settings, options
@@ -28,7 +30,7 @@ class NRTooltip
       $(@element).mouseout (e) ->
         hideTip(e)
         
-    showTip = (e) ->
+    showTip = (e) =>
       elem = $(e.target)
       position = elem.offset()
       data = $(elem).data('tooltip')
@@ -36,8 +38,8 @@ class NRTooltip
         $('.NRTooltip span').html(data)
         $('.NRTooltip').addClass('visible')
 
-        position.top -= $('.NRTooltip').outerHeight() + 6
-        position.left += elem.outerWidth()/2 - $('.NRTooltip').outerWidth()/2
+        position.top -= $('.NRTooltip').outerHeight() + 6 - @settings.correction.top
+        position.left += elem.outerWidth()/2 - $('.NRTooltip').outerWidth()/2 + @settings.correction.left
         $('.NRTooltip').offset(position)
   
     hideTip = (e) ->

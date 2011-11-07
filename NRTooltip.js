@@ -1,11 +1,15 @@
 (function() {
   var $, NRTooltip;
+  var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
   $ = jQuery;
   $.fn.extend({
     NRTooltip: function(options) {
       var settings;
       settings = {
-        delay: false,
+        correction: {
+          top: 0,
+          left: 0
+        },
         elements: false
       };
       settings = $.extend(settings, options);
@@ -38,7 +42,7 @@
           return hideTip(e);
         });
       }
-      showTip = function(e) {
+      showTip = __bind(function(e) {
         var data, elem, position;
         elem = $(e.target);
         position = elem.offset();
@@ -46,11 +50,11 @@
         if (data) {
           $('.NRTooltip span').html(data);
           $('.NRTooltip').addClass('visible');
-          position.top -= $('.NRTooltip').outerHeight() + 6;
-          position.left += elem.outerWidth() / 2 - $('.NRTooltip').outerWidth() / 2;
+          position.top -= $('.NRTooltip').outerHeight() + 6 - this.settings.correction.top;
+          position.left += elem.outerWidth() / 2 - $('.NRTooltip').outerWidth() / 2 + this.settings.correction.left;
           return $('.NRTooltip').offset(position);
         }
-      };
+      }, this);
       hideTip = function(e) {
         return $('.NRTooltip').removeClass('visible');
       };
