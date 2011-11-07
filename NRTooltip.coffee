@@ -31,12 +31,14 @@ class NRTooltip
     showTip = (e) ->
       elem = $(e.target)
       position = elem.offset()
-      $('.NRTooltip span').html($(elem).data('tooltip'))
-      $('.NRTooltip').addClass('visible')
+      data = $(elem).data('tooltip')
+      if data
+        $('.NRTooltip span').html(data)
+        $('.NRTooltip').addClass('visible')
 
-      position.top -= $('.NRTooltip').outerHeight() + 6
-      position.left += elem.outerWidth()/2 - $('.NRTooltip').outerWidth()/2
-      $('.NRTooltip').offset(position)
+        position.top -= $('.NRTooltip').outerHeight() + 6
+        position.left += elem.outerWidth()/2 - $('.NRTooltip').outerWidth()/2
+        $('.NRTooltip').offset(position)
   
     hideTip = (e) ->
       $('.NRTooltip').removeClass('visible')
