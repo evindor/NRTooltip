@@ -39,14 +39,17 @@
         });
       }
       showTip = function(e) {
-        var elem, position;
+        var data, elem, position;
         elem = $(e.target);
         position = elem.offset();
-        $('.NRTooltip span').html($(elem).data('tooltip'));
-        $('.NRTooltip').addClass('visible');
-        position.top -= $('.NRTooltip').outerHeight() + 6;
-        position.left += elem.outerWidth() / 2 - $('.NRTooltip').outerWidth() / 2;
-        return $('.NRTooltip').offset(position);
+        data = $(elem).data('tooltip');
+        if (data) {
+          $('.NRTooltip span').html(data);
+          $('.NRTooltip').addClass('visible');
+          position.top -= $('.NRTooltip').outerHeight() + 6;
+          position.left += elem.outerWidth() / 2 - $('.NRTooltip').outerWidth() / 2;
+          return $('.NRTooltip').offset(position);
+        }
       };
       hideTip = function(e) {
         return $('.NRTooltip').removeClass('visible');
