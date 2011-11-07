@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+
+  <title>evindor/NRTooltip @ GitHub</title>
+
+  <style type="text/css">
+    body {
+      margin-top: 1.0em;
+      background-color: #eee;
+      font-family: Helvetica, Arial, FreeSans, san-serif;
+      color: #333;
+      padding: 20px 10px;
+    }
+    #container {
+      margin: 0 auto;
+      width: 800px;
+    }
+    .images {
+      text-align: center;
+    }
+    .images img {
+      width: 100px;
+      height: 100px;
+      margin: 5px;
+    }
+    
+    h1 { font-size: 3.8em; margin-bottom: 3px; }
+    h1 .small { font-size: 0.4em; }
+    h1 a { text-decoration: none }
+    h2 { font-size: 1.5em; }
+    h3 { text-align: center; }
+    a { color: #3366dd; }
+    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
+    .download { float: right; }
+    pre { background: #000; color: #fff; padding: 15px;}
+    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    .footer { text-align:center; padding-top:30px; font-style: italic;}
+  </style>
+  
+  <!-- The plugin itself-->
+  <link rel="stylesheet" href="NRTooltip.css" type="text/css" media="screen" title="no title" charset="utf-8">
+  <script type="text/javascript" charset="utf-8" src="jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="tooltip.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    $( function() {
+		  $('#demo1').NRTooltip();
+		  
+		  $('#demo2').NRTooltip({elements: 'img'});
+    });
+  </script>
+  <!---->
+</head>
+
+<body>
+  <a href="http://github.com/evindor/evroneCrop"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+
+  <div id="container">
+
+    <div class="download">
+      <a href="http://github.com/evindor/evroneCrop/zipball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
+      <a href="http://github.com/evindor/evroneCrop/tarball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+    </div>
+
+    <h1><a href="http://github.com/evindor/evroneCrop">NRTooltip</a>
+      <span class="small">by <a href="http://github.com/evindor">evindor</a></span></h1>
+
+    <div class="description">
+      Easy tooltips with HTML5 data.
+    </div>
+
+<p>
+<br/>      </p>
+<h2>Demo</h2>
+<p>Usage with one element</p>
+<div class="demo1">
+  <input type="text" id="demo1" data-tooltip="Enter your password"/>
+</div>
+
+<p>Usage with a list of elements</p>
+<div class="images" id="demo2">
+  <img src="img1.jpg" alt="Image" data-tooltip="Chrome" />
+  <img src="img2.jpg" alt="Image" data-tooltip="Opera" />
+  <img src="img3.jpg" alt="Image" data-tooltip="Mozilla" />
+  <img src="img4.jpg" alt="Image" data-tooltip="Safari" />
+  <img src="img5.jpg" alt="Image" data-tooltip="Internet Explorer" />
+</div>
+
+<p>Arseny Zarechnev (cyanidesign@gmail.com), Evrone.com
+<br/>      </p>
+
+
+
+    <div class="footer">
+      get the source code on GitHub : <a href="http://github.com/evindor/evroneCrop">evindor/evroneCrop</a>
+    </div>
+
+  </div>
+
+  
+</body>
+</html>
