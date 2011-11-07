@@ -19,11 +19,20 @@
     }
     .images {
       text-align: center;
+      padding: 10px;
+      background: #fff;
+      border: 1px solid #ddd;
     }
     .images img {
       width: 100px;
       height: 100px;
       margin: 5px;
+      padding-left: 10px;
+      margin-right: 10px;
+      border-left: 1px solid #ddd;
+    }
+    .images img:first-child {
+      border: none;
     }
     
     h1 { font-size: 3.8em; margin-bottom: 3px; }
@@ -42,7 +51,7 @@
   <!-- The plugin itself-->
   <link rel="stylesheet" href="NRTooltip.css" type="text/css" media="screen" title="no title" charset="utf-8">
   <script type="text/javascript" charset="utf-8" src="jquery.js"></script>
-  <script type="text/javascript" charset="utf-8" src="tooltip.js"></script>
+  <script type="text/javascript" charset="utf-8" src="NRTooltip.js"></script>
   <script type="text/javascript" charset="utf-8">
     $( function() {
 		  $('#demo1').NRTooltip();
@@ -82,11 +91,11 @@
 
 <p>Usage with a list of elements</p>
 <div class="images" id="demo2">
-  <img src="img1.jpg" alt="Image" data-tooltip="Chrome" />
-  <img src="img2.jpg" alt="Image" data-tooltip="Opera" />
-  <img src="img3.jpg" alt="Image" data-tooltip="Mozilla" />
-  <img src="img4.jpg" alt="Image" data-tooltip="Safari" />
-  <img src="img5.jpg" alt="Image" data-tooltip="Internet Explorer" />
+  <img src="browsers_01.png" alt="Image" data-tooltip="Chrome" />
+  <img src="browsers_02.png" alt="Image" data-tooltip="Mozilla" />
+  <img src="browsers_03.png" alt="Image" data-tooltip="Opera" />
+  <img src="browsers_04.png" alt="Image" data-tooltip="Internet Explorer" />
+  <img src="browsers_05.png" alt="Image" data-tooltip="Safari" />
 </div>
 
 <p>Arseny Zarechnev (cyanidesign@gmail.com), Evrone.com
